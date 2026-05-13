@@ -23,7 +23,7 @@ function SideBarUser({ dispatch, state }) {
   return (
     <div className="sidebar-footer">
       <div className="user-card">
-        <div className="user-avatar">M</div>
+        <div className="user-avatar">{state.account.firstName[0]}</div>
         <div className="user-info">
           <div className="user-name">{state.account.firstName}</div>
           <div className="user-role">Owner</div>
