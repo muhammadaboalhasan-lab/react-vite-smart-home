@@ -13,9 +13,9 @@ function MainPageHeader({
 }) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const titleType = children.split(" ").at(1);
-  const title = `${title} Management`;
+  const title = `${titleType} Management`;
   const description =
-    title === "Room"
+    titleType === "Room"
       ? `Create ${titleType} in your home and organize appliances within them with ease.`
       : `Add ${titleType} to your rooms and organize your devices effortlessly.`;
 
