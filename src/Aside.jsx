@@ -1,15 +1,15 @@
 import { NavLink } from "react-router-dom";
 import { WebLogo, RoomIcon, DevicesNavLogo } from "./components/data/Logos";
-function Aside({ dispatch, state }) {
+function Aside({ sidebarState: [sidebarOpen, setSidebarOpen], dispatch, state }) {
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${sidebarOpen? 'active' : ''}`}>
       <WebLogo />
       <nav className="nav">
-        <NavLink to="/Rooms" className="nav-item">
+        <NavLink to="/Rooms" className="nav-item" onClick={()=> setSidebarOpen(prev => !prev)}>
           <RoomIcon />
           <span>Rooms</span>
         </NavLink>
-        <NavLink to="/Devices" className="nav-item">
+        <NavLink to="/Devices" className="nav-item" onClick={()=> setSidebarOpen(prev => !prev)}>
           <DevicesNavLogo />
           <span>Devices</span>
         </NavLink>

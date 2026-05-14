@@ -1225,6 +1225,10 @@ svg {
   .energy-chart {
     height: 130px;
   }
+  .sidebar.active {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 420px) {

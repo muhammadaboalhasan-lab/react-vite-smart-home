@@ -5,14 +5,14 @@ import MainPageHeader from "../MainPageHeader";
 import MainFilterHeader from "../MainFilterHeader";
 import ModalAddRoom from "../ModalAddRoom";
 import { useState } from "react";
-function RoomsGrid({ rooms, dispatch }) {
+function RoomsGrid({ setSidebarOpen, rooms, dispatch }) {
   const [editId, setEditId] = useState("");
   //   const { id, roomNickName, roomType, roomFloorType, colorID } = rooms;
 
 
   return (
     <>
-      <MainPageHeader ModalContent={ModalAddRoom} rooms={rooms} editIdState={[editId, setEditId]} dispatch={dispatch}>
+      <MainPageHeader ModalContent={ModalAddRoom} setSidebarOpen={setSidebarOpen} rooms={rooms} editIdState={[editId, setEditId]} dispatch={dispatch}>
         Add Room
       </MainPageHeader>
       <MainFilterHeader dispatch={dispatch} />

@@ -8,12 +8,12 @@ import { devicesData } from "../data/devicesData";
 import { roomsData } from "../data/roomsData";
 
 import { useState } from "react";
-function DevicesGrid({ rooms, dispatch }) {
+function DevicesGrid({ setSidebarOpen, rooms, dispatch }) {
     const [editId, setEditId] = useState("");
   return (
     <>
       <MainPageHeader
-         ModalContent={ModalAddDevice} rooms={rooms} editIdState={[editId, setEditId]} dispatch={dispatch}
+         ModalContent={ModalAddDevice} setSidebarOpen={setSidebarOpen} rooms={rooms} editIdState={[editId, setEditId]} dispatch={dispatch}
       >
         Add Device
       </MainPageHeader>

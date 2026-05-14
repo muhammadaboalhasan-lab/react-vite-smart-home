@@ -3,11 +3,23 @@ import Header from "./Header";
 import { AddLogo } from "./data/Logos";
 // import ModalAddRoom from "./ModalAddRoom";
 
-function MainPageHeader({ ModalContent, rooms, editIdState:[editId, setEditId], dispatch, children }) {
+function MainPageHeader({
+  ModalContent,
+  setSidebarOpen,
+  rooms,
+  editIdState: [editId, setEditId],
+  dispatch,
+  children,
+}) {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const titleType = children.split(" ").at(1);
+  const title = `${title} Management`;
+  const description =
+    title === "Room"
+      ? `Create ${titleType} in your home and organize appliances within them with ease.`
+      : `Add ${titleType} to your rooms and organize your devices effortlessly.`;
 
-  function onHandleOpenModal()
-  {
+  function onHandleOpenModal() {
     setIsOpenModal(true);
   }
 
@@ -16,15 +28,28 @@ function MainPageHeader({ ModalContent, rooms, editIdState:[editId, setEditId], 
     setEditId("");
   }
 
-  const isActiveModal = editId.length > 0 || isOpenModal
+  const isActiveModal = editId.length > 0 || isOpenModal;
   return (
     <>
       <header className="topbar">
+        <button
+          className="menu-toggle"
+          onClick={() => setSidebarOpen((prev) => !prev)}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
         <Header
-          title={"Room Management"}
-          description={
-            "Create rooms in your home and organize appliances within them with ease."
-          }
+          title={title}
+          description={description}
           className={"greeting"}
         />
         <div className="topbar-actions">
