@@ -30,7 +30,7 @@
   --radius-sm: 12px;
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 
-/* حالة التشغيل - ON (أزرق مشرق مع خلفية غنية) */
+  /* حالة التشغيل - ON (أزرق مشرق مع خلفية غنية) */
   --surface-2-on: #1e293b;
   --surface-3-on: #0f172a;
   --accent-on: #00d2ff; /* لون سماوي كهربائي */
@@ -798,7 +798,11 @@ svg {
 }
 
 .device-off {
-  background: linear-gradient(135deg, var(--surface-2-off), var(--surface-3-off));
+  background: linear-gradient(
+    135deg,
+    var(--surface-2-off),
+    var(--surface-3-off)
+  );
   color: var(--accent-off);
   border-color: var(--border-off-dark);
 }
@@ -1255,7 +1259,7 @@ svg {
 
 /* ===== أزرار رئيسية ===== */
 .btn-primary-lg {
-  width : 155px;
+  width: 155px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -2039,8 +2043,7 @@ svg {
 .toast-container {
   position: fixed;
   top: 20px;
-  left: 55%;
-  transform: translateX(-55%);
+  left: 19%;
   z-index: 2000;
   display: flex;
   flex-direction: column;
